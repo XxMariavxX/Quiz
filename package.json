@@ -1,0 +1,24 @@
+{
+  "name": "quiz",
+  "version": "1.0.0",
+  "description": "quiz",
+  "keywords": [
+    "quiz",
+    "funny"
+  ],
+  "homepage": "https://github.com/XxMariavxX/Quiz#readme",
+  "bugs": {
+    "url": "https://github.com/XxMariavxX/Quiz/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XxMariavxX/Quiz.git"
+  },
+  "license": "ISC",
+  "author": "Mariia, Koly, Illya, Hashum",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
