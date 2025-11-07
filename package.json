@@ -15,7 +15,7 @@
     "url": "git+https://github.com/XxMariavxX/Quiz.git"
   },
   "license": "ISC",
-  "author": "Mariia, Koly, Illya, Hashum",
+  "author": "Mariia, Kolya, Illya, Hashim",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
