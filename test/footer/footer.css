@@ -1,0 +1,19 @@
+.body {
+  margin: 0;
+}
+.footstyle {
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  background-color: #feadad;
+  padding: 10px 50px;
+  border-top: 3px solid #8f7b7b;
+}
+.footer__container{
+  
+}
+.h1 {
+  color: #000000;
+}
