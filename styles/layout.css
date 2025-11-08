@@ -1,7 +1,6 @@
 
 .footstyle {
   position: fixed;
-  padding-bottom: 100%;
   width: 100%;
   margin: 0;
   bottom: 0;
@@ -9,6 +8,7 @@
 
 .footer {
   display: flex;
+  flex-direction: row; 
   justify-content: space-between;
   align-items: center;
   background-color: #000000;
