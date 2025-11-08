@@ -2,15 +2,8 @@
 
 * {
     font-family:"Archivo", sans-serif ;
-}
-body{
     
 }
-.main {
-}
-.bar_left {
-}
-.page {
-}
-.bar_right {
+.section{
+    display:flex;
 }
