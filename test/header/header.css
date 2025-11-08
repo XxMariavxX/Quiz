@@ -1,11 +1,13 @@
+body {
+    margin: 0;
+}
 .headerstyle {
     margin:0;
     padding:0;
+    width:100%;
 
 }
 .header__headerstyle {
-    position: relative;
-    width: 100%;
     height: 10vh;
     display:flex;
     align-items: center;
@@ -15,10 +17,25 @@
     margin: 0;
     padding: 0;
 }
-body {
-    margin: 0;
-}
 .nav {
-    margin-right: 20px
+    display: flex;
+    margin-right:40px;
+    gap: 20px;
+}
+.nav_div{
+    flex: 1 1 auto;
+    padding: 3px;
+    border-radius:5px;
+    background-color: rgb(82, 22, 131);
+ }
+ .nav_div a{
+    text-decoration: none;
+    color: rgb(252, 252, 252);;
+ }
+
+.logo {
+    margin-top:15px;
+    margin-left:30px;
+    width:100px
 
 }
