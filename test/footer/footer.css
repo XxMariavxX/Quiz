@@ -10,22 +10,33 @@ body {
 
 .footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   background-color: #000000;
   padding: 10px 70px;
   border-top: 3px solid #7d7979;
-  align-items: center;
   color: #ffffff;
 }
-.authors {
-  
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-img {
+  width: 40%;
+  height: 40%;
+}
+.authors{
+  align-items: center;
 
 }
-.footer-img {
-}
+
 h4 {
   align-items: center;
 }
+
 ul {
   list-style: none;
 }

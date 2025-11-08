@@ -20,6 +20,7 @@
 
 .nav__btn a {
   display: inline-block;
+  text-decoration: none;
   padding: 12px 25px;
   background-color: #B45C6C;
   color: white;
