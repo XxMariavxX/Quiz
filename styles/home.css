@@ -1,3 +1,6 @@
+body{
+    margin: 0;
+}
 .main__wrapper {
     width: 100vw;
     display: flex;
