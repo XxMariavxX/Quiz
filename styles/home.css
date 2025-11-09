@@ -1,10 +1,11 @@
 .main {
-  flex: 1;
+  flex-grow: 1;
 }
+
 .main__wrapper {
   display: flex;
   flex-wrap: nowrap;
-  height: 100vh;
+  height: 100%;
 }
 
 .main-conteiner {
@@ -12,6 +13,7 @@
   height: 72.5vh;
   display: flex;
 }
+
 .sidebar {
   display: block;
   width: 5vw;
