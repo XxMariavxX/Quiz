@@ -12,7 +12,7 @@
     height: 72.5vh;
     display: flex;
 }
-.main-conteiner sidebar {
+.sidebar {
   flex: 0 0 5%;
   background-color: rgb(66, 16, 62);
   padding: 1rem;
