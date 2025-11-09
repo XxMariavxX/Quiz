@@ -1,13 +1,26 @@
-.title{
+input.title{
     background-color: transparent;
     border:none;
+    font-size: x-large;
+    outline: none;
+    font-style: italic;
+    margin: 5px;
     color: white;
     
 }
+fieldset{
+    align-items: center;
+}
+
 input::placeholder {
   color: white;
   font-style: italic;
 }
-.create{
 
+button{
+    cursor:pointer;
+}
+
+.create{
+    cursor:pointer;
 }
