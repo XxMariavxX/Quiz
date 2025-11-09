@@ -1,8 +1,8 @@
 .header{
   background: #61305D;
+  position: sticky;
   text-align: center;
   flex-shrink: 0; 
-  position: sticky;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   z-index: 100%;
 
