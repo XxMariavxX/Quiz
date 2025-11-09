@@ -1,16 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
-* {
-    font-family:"Archivo", sans-serif ;
-}
-body{
-    
-}
 .main {
+  flex: 1;
 }
-.bar_left {
+.main__wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100vh;
 }
-.page {
+
+.main-conteiner{
+  width: 100vw;
+    height: 72.5vh;
+    display: flex;
 }
-.bar_right {
+.sidebar {
+  flex: 0 0 5%;
+  background-color: rgb(66, 16, 62);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  width: 90vw;
 }

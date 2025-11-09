@@ -1,0 +1,40 @@
+body{
+  margin: 0;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 30px;
+  background-color: #61305D;
+  box-sizing: border-box;
+}
+
+.logo-img {
+  width: 60px;
+  height: auto;
+}
+
+.nav {
+  display: flex;
+  gap: 15px;
+}
+
+.nav__btn a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 25px;
+  background-color: #B45C6C;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn a:hover {
+  background-color: #E67C7C;
+  transform: scale(1.05);
+}

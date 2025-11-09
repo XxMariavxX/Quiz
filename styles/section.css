@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  font-family: "Archivo", sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #e67c7c;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 20px;
+}
