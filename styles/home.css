@@ -1,17 +1,21 @@
-body{
-    margin: 0;
+.main {
+  flex: 1;
 }
 .main__wrapper {
-    width: 100vw;
-    display: flex;
+  width: 100vw;
+  display: flex;
 }
 
 .sidebar {
-    display: block;
-    width: 5vw;
-    background-color: rgb(97, 48, 93);
+  display: block;
+  flex: 1;
+  width: 5vw;
+  background-color: rgb(79, 23, 74);
 }
 
 .main-content {
-    width: 90vw;
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  width: 90vw;
 }
