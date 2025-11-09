@@ -1,0 +1,13 @@
+.title{
+    background-color: transparent;
+    border:none;
+    color: white;
+    
+}
+input::placeholder {
+  color: white;
+  font-style: italic;
+}
+.create{
+
+}
