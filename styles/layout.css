@@ -1,3 +1,44 @@
+.header{
+  background: #61305D;
+  text-align: center;
+  flex-shrink: 0; 
+  position: sticky;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+
+
+}
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #61305D;
+    box-sizing: border-box;
+}
+
+.logo__img {
+   width: 60px;
+    height: auto;
+    border-radius: 100%;
+
+}
+
+.header-container__nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav__link a {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #340d34;
+    color: #f6b679;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
 .footstyle {
   position: fixed;
   background: #61305d;
@@ -13,7 +54,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  background-color: #000000;
+  background-color: #340d34;
   color: #ffffff;
   box-sizing: border-box;
   padding: 10px 70px;
