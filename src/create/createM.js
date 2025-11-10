@@ -1,83 +1,42 @@
 const title = document.getElementById("title");
 const description = document.getElementById("description");
-const addAnswer = document.getElementById("add-answer");
-const addQuestion = document.getElementById("add-question");
 const block = document.getElementById("field");
 const block1 = document.getElementById("field__1");
 const create = document.getElementById("create");
 const createQuiz = document.getElementById("createQuiz");
 const container = document.getElementById("create-quiz");
-const blockQuestionAnswer = document.getElementById("question")
+const blockQuestionAnswer = document.getElementById("question");
 
 createQuiz.addEventListener("click", function () {
-  if (block.querySelector("div")) return;
+  if (!block || !createQuiz) return;
   block.insertAdjacentHTML(
     "beforeend",
     `<br>
         <fieldset>
-        <button type="button" id="add-question">Add question</button>
+        <button type="button" id="addquestion">Add question</button>
         <button type="button" id="add-answer">Add answer</button>
-        <fieldset class = "question" id="question">
-        <input>  
-        </fieldset>
-         </fieldset>`
+        <fieldset class = "quiz" id="quiz">
+        <br>
+        <input type="text" id="question" placeholder= "Write your question ">
+        <br>
+        <input type="text" id="answer" placeholder= "your answer ">
+        <br>
+        <input type="text" id="answer" placeholder= "your answer ">  
+        </fieldset>`
   );
+  const addQuestion = block1.querySelector("#addquestion");
+  addQuestion.addEventListener("click", function () {
+    const inputQuestion = document.createElement("div");
+    inputQuestion.insertAdjacentHTML("beforeend",  
+    `<br>
+    <input type="text" id="question" placeholder=" Write your question ?">
+    <br>
+    <input type="text" id="add-answer" placeholder= "your answer">
+    <br>
+    <input type="text" id="add-answer" placeholder= "your answer">
+    `);
+    field__1.appendChild(inputQuestion);
+  });
+  const addAnswer = block1.querySelector("#answer");
+  addAnswer.
 });
-
-addQuestion.addEventListener("click", function () {
-  const inputQuestion = document.createElement("input");
-  field__1.appendChild(inputQuestion);
-});
-
-addAnswer.addEventListener("click", function () {
-  const inputAnswer = document.createElement("input");
-  field__1.appendChild(inputAnswer);
-});
-// quizElement.querySelector("#delete").addEventListener("click", e => {
-//     e.target.closest(".question").remove();
-// });
-// addAnswer.addEventListener("click", function () {
-//   const inputAnswer = document.createElement("input");
-//   field__1.appendChild(inputAnswer);
-// });
-
-// createQuiz.addEventListener("click", function () {
-//     if (!block || !createQuiz) return;
-//     block.insertAdjacentHTML("beforeend",
-//         `<br>
-//         <button type="button" id="add-question">Add question</button>
-//         <button type="button" id="add-answer">Add answer</button>
-//         <fieldset class = "question" >
-//         </fieldset>
-//         `)
-// });
-
-// addQuestion.addEventListener("click", function () {
-//     field__1.insertAdjacentHTML(".question",`
-//         <fieldset>
-//         <input type="text" id="add-question" placeholder="Write your question ?">
-//         </fieldset>
-//         <fieldset>
-//         <input type="text" id="add-question" placeholder= your answer ?">
-//         <input type="text" id="add-question" placeholder= your answer ?">
-//         </fieldset>
-//         `)
-// });
-
-// addAnswer.addEventListener("click", function () {
-//     field__1.insertAdjacentHTML("beforeend",`
-//         <fieldset>
-//         <input type="text" id="add-question" placeholder= your answer">
-//         </fieldset>
-//         `)
-// });
-
-// addQuestion.addEventListener("click", function () {
-//     const inputQuestion = document.createElement("input")
-//     field.appendChild(inputQuestion)
-// });
-
-// addAnswer.addEventListener("click", function(){
-//     const inputAnswer =document.createElement("input")
-//     field.appendChild(inputAnswer)
-// })

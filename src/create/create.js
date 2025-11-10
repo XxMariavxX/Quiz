@@ -24,7 +24,7 @@ createQuiz.addEventListener("click", function () {
         <input type="text" id="answer" placeholder= "your answer ">  
         </fieldset>`
   );
-  const addQuestion = block.querySelector("#addquestion");
+  const addQuestion = block1.querySelector("#addquestion");
   addQuestion.addEventListener("click", function () {
     const inputQuestion = document.createElement("div");
     inputQuestion.insertAdjacentHTML("beforeend",  
@@ -37,4 +37,6 @@ createQuiz.addEventListener("click", function () {
     `);
     field__1.appendChild(inputQuestion);
   });
+  const addAnswer = block1.querySelector("#answer");
+  addAnswer.
 });
