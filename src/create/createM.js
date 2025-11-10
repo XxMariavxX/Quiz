@@ -38,5 +38,5 @@ createQuiz.addEventListener("click", function () {
     field__1.appendChild(inputQuestion);
   });
   const addAnswer = block1.querySelector("#answer");
-  addAnswer.
+  addAnswer.addEventListener("click")
 });
