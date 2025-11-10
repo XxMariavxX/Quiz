@@ -9,8 +9,6 @@ const createQuiz = document.getElementById("createQuiz");
 const container = document.getElementById("create-quiz");
 const blockQuestionAnswer = document.getElementById("question")
 
-if (!block || !createQuiz) return;
-
 createQuiz.addEventListener("click", function () {
   if (block.querySelector("div")) return;
   block.insertAdjacentHTML(
@@ -20,6 +18,7 @@ createQuiz.addEventListener("click", function () {
         <button type="button" id="add-question">Add question</button>
         <button type="button" id="add-answer">Add answer</button>
         <fieldset class = "question" id="question">
+        <input>  
         </fieldset>
          </fieldset>`
   );
