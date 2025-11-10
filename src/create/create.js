@@ -37,6 +37,7 @@ createQuiz.addEventListener("click", function () {
     `);
     field__1.appendChild(inputQuestion);
   });
+  function
   // const addAnswer = block1.querySelector("#answer");
   // addAnswer.
 });
