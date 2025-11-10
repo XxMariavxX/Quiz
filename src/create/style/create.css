@@ -32,7 +32,7 @@ fieldset{
 }
 
 input::placeholder {
-  color: white;
+  color: rgba(0, 0, 0, 0.333);
   font-style: italic;
 }
 
