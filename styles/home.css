@@ -8,9 +8,9 @@
 }
 
 .main-conteiner {
-  width: 100vw;
-  height: 72.5vh;
   display: flex;
+  width: 100vw;
+  height: 70vh;
 }
 .sidebar {
   display: block;

@@ -1,3 +1,21 @@
+.center{
+  justify-content: center;
+}
+.main-conteiner {
+  width: 100vw;
+  height: 72.5vh;
+  display: flex;
+}
+
+.sidebar {
+  display: block;
+  width: 5vw;
+  flex: 0 0 25%;
+  background-color: rgb(66, 16, 62);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
 input.title{
     background-color: transparent;
     border:none;
@@ -8,12 +26,13 @@ input.title{
     color: white;
     
 }
+
 fieldset{
     align-items: center;
 }
 
 input::placeholder {
-  color: white;
+  color: rgba(0, 0, 0, 0.333);
   font-style: italic;
 }
 
