@@ -4,17 +4,20 @@
 .main-conteiner {
   width: 100vw;
   height: 72.5vh;
-  display: flex;
 }
-
-textarea::placeholder{
-  color:rgba(0, 0, 0, 0.63);
+.description {
+  background-color: #e67c7c;
+  resize: none;
+  
 }
-
+.description-box{
+  display:flex;
+  flex-direction:column;
+}
 .sidebar {
   display: block;
   width: 5vw;
-  flex: 0 0 20%;
+  flex: 0 0 25%;
   background-color: rgb(66, 16, 62);
   padding: 1rem;
   box-sizing: border-box;

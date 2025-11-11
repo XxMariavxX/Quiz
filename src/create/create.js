@@ -2,59 +2,75 @@ const title = document.getElementById("title");
 const description = document.getElementById("description");
 const block = document.getElementById("field");
 const create = document.getElementById("create");
-const createQuiz = document.getElementById("createQuiz");
 const container = document.getElementById("create-quiz");
 const center = document.getElementById("center")
+const addQuestion = document.getElementById("addquestion");
 
-createQuiz.addEventListener("click", function () {
-  createQuiz.remove()
-  center.insertAdjacentHTML(
-    "afterbegin",
-    `<button type="button" id="addquestion">Add question</button>`
-  )
-  block.insertAdjacentHTML(
-    "beforeend",
-    `<br>
-        <fieldset >
-        <button type="button" class = "add-answer">Add answer</button>
-        <div class = "quiz" id="quiz">
-        <br>
-        <input type="text"  placeholder= "Write your question ">
-        <br>
-        <input type="text"  placeholder= "your answer ">
-        <br>
-        <input type="text"  placeholder= "your answer ">
-        </div>
-        </fieldset>`
-  );
-  const addQuestion = document.getElementById("addquestion");
-  addQuestion.addEventListener("click", function () {
-    block.insertAdjacentHTML("beforeend",  
-    `<fieldset>
-        <button type="button"  class = "add-answer">Add answer</button>
+
+addQuestion.addEventListener("click", function () {
+    block.insertAdjacentHTML("afterbegin",  
+    `<fieldset class = "quiz">
+        <button type="button" id = "add-answer" class = "add-answer">Add answer</button>
         <div>
         <br>
-        <input type="text"  placeholder= "Write your question ">
-        <br>
-        <input type="text"  placeholder= "your answer ">
-        <br>
-        <input type="text"  placeholder= "your answer ">
+        <input type="text" class="question" c placeholder= "Write your question ">
+        <br> 
+        <div class="answer">
+          <input type="text"  placeholder= "your answer ">
+          <input type="checkbox" />
+        </div>
+        <div class="answer">
+          <input type="text"  placeholder= "your answer ">
+          <input type="checkbox" />
+        </div>
         <div>
     </fieldset>`
         )
-      })
+    const field = block.querySelector(".quiz")
+    const addAnswer = field.querySelector(".add-answer")
+    addAnswer.addEventListener("click", function() {
+       field.insertAdjacentHTML("beforeend",
+            `<div class="answer">
+            <input type="text" id="answer" placeholder= "your answer">
+            <input type="checkbox" />
+            </div>`
 
-    const addAnswer = document.querySelector(".add-answer")
-        addAnswer.addEventListener("click", function() {
-        const answer = document.createElement("input");
-        answer.type = "text";
-        answer.placeholder = "Write your question";
-        answer.className = "question"
-        const block_2 = document.querySelector(".quiz")
-        block_2.insertAdjacentHTML("beforeend",
-            `<input type="text" id="question" placeholder= "your answer"></input>`
             )
         })
       })
+    
 
+function saveQuiz() {
+        const form = document.querySelector(".quiz")
+        if(!form) {
+          return
+        }
+        const answers = form.querySelectorAll(".answer")
+        const result = {correct:[]}
+        for(let i = 0; i < answers.length; i++) {
+          const answer = answers[i].querySelector('input[type ="text"]').value
+          const answerIndex = `answer_${i + 1}`
+          result[answerIndex] = answer
+          const checked = answers[i].querySelector('input[type="checkbox"]').checked 
+          if(checked){
+            result.correct.push({
+              answerIndex: answerIndex,
+              answerText: answer
+            })
+          }
+        }
 
+        
+        result.question = form.querySelector(".question").value
+
+        if(!localStorage.getItem('quizzes')) {
+          localStorage.setItem('quizzes', JSON.stringify([result]))
+        } else {
+          const quizzes = JSON.parse(localStorage.getItem('quizzes'))
+          quizzes.push(result)
+          localStorage.setItem('quizzes', JSON.stringify(quizzes))
+        }
+        console.log(localStorage.getItem('quizzes'));
+      
+}
+create.addEventListener('click', saveQuiz)
