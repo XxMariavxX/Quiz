@@ -8,6 +8,7 @@ const blockQuestionAnswer = document.getElementById("question");
 
 createQuiz.addEventListener("click", function () {
   if (!block || !createQuiz) return;
+  createQuiz.remove();
   block.insertAdjacentHTML(
     "beforeend",
     `<br>
