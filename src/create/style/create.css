@@ -7,10 +7,14 @@
   display: flex;
 }
 
+textarea::placeholder{
+  color:rgba(0, 0, 0, 0.63);
+}
+
 .sidebar {
   display: block;
   width: 5vw;
-  flex: 0 0 25%;
+  flex: 0 0 20%;
   background-color: rgb(66, 16, 62);
   padding: 1rem;
   box-sizing: border-box;
