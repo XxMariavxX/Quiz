@@ -32,26 +32,29 @@ createQuiz.addEventListener("click", function () {
     block.insertAdjacentHTML("beforeend",  
     `<fieldset>
         <button type="button"  class = "add-answer">Add answer</button>
-        <fieldset class = "quiz" id="quiz">
+        <div>
         <br>
         <input type="text"  placeholder= "Write your question ">
         <br>
         <input type="text"  placeholder= "your answer ">
         <br>
         <input type="text"  placeholder= "your answer ">
-  
+        <div>
     </fieldset>`
-    );
-  });
-})
-const addAnswer = document.querySelector(".add-answer")
+        )
+      })
+
+    const addAnswer = document.querySelector(".add-answer")
         addAnswer.addEventListener("click", function() {
         const answer = document.createElement("input");
         answer.type = "text";
         answer.placeholder = "Write your question";
         answer.className = "question"
-        const field_2 = document.querySelector(".quiz")
-        field_2.insertAdjacentHTML("beforeend",
-            `<input type="text" id="question" placeholder= "Write your question "></input>`
+        const block_2 = document.querySelector(".quiz")
+        block_2.insertAdjacentHTML("beforeend",
+            `<input type="text" id="question" placeholder= "your answer"></input>`
             )
         })
+      })
+
+
