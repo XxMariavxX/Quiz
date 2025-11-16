@@ -1,86 +1,80 @@
 .header {
-  padding: 24px 96px;
+  padding: 25px 240px;
 }
 
 .header__container {
-  padding: 5px 20px;
+  padding: 5px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(238, 170, 170, 0.5);
-  border-radius: 40px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(4px);
+  border-radius: 16px;
+  background-color: rgba(238, 170, 170, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.414);
+  backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(238, 170, 170, 1);
 }
 
-.header-container {}
-
-.header-container__logo {}
-
-.logo {}
-
 .logo__img {
-  width: 50px;
+  width: 100px;
   height: auto;
-  margin: 5px;
 }
 
 .header-container__nav {
   display: flex;
-  gap: 10px;
 }
-
-.nav {}
-
-.nav__link {}
 
 .nav__link a {
   margin: 10px 20px;
   display: inline-block;
-  color: rgb(140, 64, 79, 0.8);
   text-decoration: none;
   text-align: center;
   font-weight: bold;
 }
 
 .footer {
-  padding: 24px 96px;
+  padding: 20px 240px;
+  margin-top: auto;
 }
 
 .footer__container {
-  padding: 10px 70px;
+  padding: 10px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: rgba(238, 170, 170, 0.5);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.414);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(238, 170, 170, 1);
+  gap: 20%;
 }
 
-.footer-left {}
+.footer-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
 
-.footer-left h1 {
+.foooter-title {
   text-align: center;
   font-size: 2em;
-  color: #f6b679;
+
 }
 
-.footer-img {}
+.footer-img {
+  width: 50px;
+  height: auto;
+}
 
 .footer-right {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
 }
 
 .footer-right h2 {
-  color: rgb(123, 61, 118);
+  margin-right: 20px;
 }
 
 .footer-right ul {
@@ -90,5 +84,5 @@
 
 .footer-right li {
   margin: 10px;
-  color: rgb(123, 61, 118);
+  font-weight: 800;
 }

@@ -2,18 +2,25 @@
 
 * {
   font-family: "Archivo", sans-serif;
+  color: rgba(48, 24, 50, 0.744)
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vh;
   min-height: 100vh;
+  background-image: url("/public/background7.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgb(184, 101, 117);
-  color: #fff;
+  background-color: #c7e4f290;
 }
 
 ul {
