@@ -80,9 +80,10 @@
 .footer-right ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap:10px;
 }
 
 .footer-right li {
-  margin: 10px;
+  margin: 10%;
   font-weight: 800;
 }
