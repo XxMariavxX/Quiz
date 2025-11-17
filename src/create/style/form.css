@@ -10,7 +10,6 @@
 
 .quiz .deleteBlock {
   position: absolute;
-  background: #f4f6fa;
   top: 12px;
   right: 12px;
 
@@ -37,9 +36,7 @@
   cursor: pointer;
   transition: 0.2s;
 
-  display: inline-block;    
-  width: auto;               
-  max-width: none;           
+  display: inline-block;                            
 }
 
 .add-answer:hover {

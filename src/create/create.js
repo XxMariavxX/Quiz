@@ -52,39 +52,45 @@ addQuestion.addEventListener("click", function () {
 });
 
 function saveQuiz() {
-  const form = document.querySelector(".quiz");
-  if (!form) return;
+  const form = document.querySelectorAll(".quiz");
 
+  if (form.length === 0) return;
 
   const result = {
     title: title.value.trim(),
     description: description.value.trim(),
-    question: "",
+    question: [],
     answers: [],
     correct: [],
+    amount: form.length, 
   };
 
+  form.forEach((quizField, qIndex) => {
 
-  const answers = form.querySelectorAll(".answer, newAnswer");
+    const questionText = quizField.querySelector(".question").value.trim();
+    result.question.push(questionText);
 
-  for (let i = 0; i < answers.length; i++) {
-    const answer = answers[i].querySelector('input[type ="text"]').value;
-    const answerIndex = `answer_${i + 1}`;
-    result[answerIndex] = answer;
-    const checked = answers[i].querySelector('input[type="checkbox"]').checked;
+    const questionAnswers = [];
+    const questionCorrect = [];
 
-    result.answers.push(answer);
+    const answersFields = quizField.querySelectorAll(".answer, .newAnswer");
+    answersFields.forEach((ansField, aIndex) => {
+      const answerText = ansField.querySelector('input[type="text"]').value.trim();
+      const checked = ansField.querySelector('input[type="checkbox"]').checked;
 
-    if (checked) {
-      result.correct.push({
-        answerIndex: answerIndex,
-        answerText: answer,
-      });
-    }
-  }
+      questionAnswers.push(answerText);
 
+      if (checked) {
+        questionCorrect.push({
+          answerIndex: `q${qIndex + 1}_answer_${aIndex + 1}`,
+          answerText: answerText,
+        });
+      }
+    });
 
-  result.question = form.querySelector(".question").value;
+    result.answers.push(questionAnswers);
+    result.correct.push(questionCorrect);
+  });
 
   if (!localStorage.getItem("quizzes")) {
     localStorage.setItem("quizzes", JSON.stringify([result]));
@@ -95,5 +101,11 @@ function saveQuiz() {
   }
 
   console.log(localStorage.getItem("quizzes"));
+  console.log("Кількість питань:", result.amount);
+  console.log("Питання:", result.question);
+  console.log("Всі відповіді:", result.answers);
+  console.log("Правильні відповіді:", result.correct);
 }
+
 create.addEventListener("click", saveQuiz);
+

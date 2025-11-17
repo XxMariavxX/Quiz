@@ -1,5 +1,9 @@
 .header{
-  padding: 25px max(5vw, 20px);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: clamp(20px, 12vw, 180px);
+  padding-right: clamp(20px, 12vw, 180px);
+  margin-top: auto;
 }
 
 .header__container {
