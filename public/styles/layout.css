@@ -1,5 +1,5 @@
-.header {
-  padding: 25px 180px;
+.header{
+  padding: 25px max(5vw, 20px);
 }
 
 .header__container {
@@ -32,12 +32,14 @@
 }
 
 .footer {
-  padding: 20px 180px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: clamp(20px, 12vw, 180px);
+  padding-right: clamp(20px, 12vw, 180px);
   margin-top: auto;
 }
 
 .footer__container {
-  padding: 10px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,6 +48,7 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.414);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  padding: 10px 40px;
   gap: 20%;
 }
 

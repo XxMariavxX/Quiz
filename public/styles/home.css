@@ -4,8 +4,8 @@
 }
 
 .main__container {
-  padding: 20px;
   display: grid;
+  padding: 20px;
   grid-template-columns: repeat(3, 1fr);
   background: rgba(237, 151, 167, 0.677);
   border-radius: 16px;

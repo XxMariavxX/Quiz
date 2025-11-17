@@ -11,9 +11,10 @@
 }
 
 .sidebar {
-  flex: 0 0 5vw;
-  padding: 1rem;
+  width: 220px;
   background-color: rgb(66, 16, 62);
+  border-radius: 12px;
+  padding: 1rem;
   box-sizing: border-box;
 }
 
