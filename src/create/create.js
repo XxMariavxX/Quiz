@@ -6,8 +6,6 @@ const center = document.getElementById("center");
 const addQuestion = document.getElementById("addQuestion");
 const create = document.getElementById("create");
 
-const result = { title: "", description: "", correct: [] };
-
 addQuestion.addEventListener("click", function () {
   block.insertAdjacentHTML(
     "beforeend",
@@ -54,17 +52,29 @@ addQuestion.addEventListener("click", function () {
 });
 
 function saveQuiz() {
-  result.title.push();
   const form = document.querySelector(".quiz");
-  if (!form) {
-    return;
-  }
-  const answers = form.querySelectorAll(".answer");
+  if (!form) return;
+
+
+  const result = {
+    title: title.value.trim(),
+    description: description.value.trim(),
+    question: "",
+    answers: [],
+    correct: [],
+  };
+
+
+  const answers = form.querySelectorAll(".answer, newAnswer");
+
   for (let i = 0; i < answers.length; i++) {
     const answer = answers[i].querySelector('input[type ="text"]').value;
     const answerIndex = `answer_${i + 1}`;
     result[answerIndex] = answer;
     const checked = answers[i].querySelector('input[type="checkbox"]').checked;
+
+    result.answers.push(answer);
+
     if (checked) {
       result.correct.push({
         answerIndex: answerIndex,
@@ -72,6 +82,7 @@ function saveQuiz() {
       });
     }
   }
+
 
   result.question = form.querySelector(".question").value;
 
@@ -82,6 +93,7 @@ function saveQuiz() {
     quizzes.push(result);
     localStorage.setItem("quizzes", JSON.stringify(quizzes));
   }
+
   console.log(localStorage.getItem("quizzes"));
 }
 create.addEventListener("click", saveQuiz);

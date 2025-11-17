@@ -1,6 +1,9 @@
-.center{
-  justify-content: center;
+.section-create {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
+
 .main-conteiner {
   width: 100vw;
   height: 72.5vh;
@@ -8,27 +11,23 @@
 }
 
 .sidebar {
-  display: block;
-  width: 5vw;
-  flex: 0 0 25%;
-  background-color: rgb(66, 16, 62);
+  flex: 0 0 5vw;
   padding: 1rem;
+  background-color: rgb(66, 16, 62);
   box-sizing: border-box;
 }
 
-input.title{
-    background-color: transparent;
-    border:none;
-    font-size: x-large;
-    outline: none;
-    font-style: italic;
-    margin: 5px;
-    color: white;
-    
+input.title {
+  background-color: transparent;
+  border: none;
+  font-size: x-large;
+  outline: none;
+  font-style: italic;
+  margin: 5px;
+  color: white;
 }
 
-fieldset{
-    align-items: center;
+fieldset {
 }
 
 input::placeholder {
@@ -36,16 +35,18 @@ input::placeholder {
   font-style: italic;
 }
 
-button{
-    cursor:pointer;
+button {
+  cursor: pointer;
 }
 
-.create{
-    cursor:pointer;
+.create {
+  margin: 0;
+  margin-top: 5px;
+  cursor: pointer;
 }
 
-.create-quiz{
-  display:flex;
+.create-quiz {
+  display: flex;
   flex-direction: column;
-  gap:5px;
+  gap: 5px;
 }
