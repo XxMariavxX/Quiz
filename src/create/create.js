@@ -35,14 +35,14 @@ addQuestion.addEventListener("click", function () {
   addAnswer.addEventListener("click", function () {
     field.insertAdjacentHTML(
       "beforeend",
-      `<div class="answer">
+      `<div class="newAnswer">
             <div>
             <button type="button" class="deleteAnswer">❌</button>
             <input type="text" id="answer" placeholder= "your answer">
             <input type="checkbox" />
        </div>`
     );
-    const newAnswer = field.querySelector(".answer:last-child");
+    const newAnswer = field.querySelector(".newAnswer:last-child");
     const deleteAnswer = newAnswer.querySelector(".deleteAnswer");
     deleteAnswer.addEventListener("click", function () {
       newAnswer.remove();
