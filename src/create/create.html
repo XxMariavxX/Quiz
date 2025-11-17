@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/create/style/create.css" />
     <link rel="stylesheet" href="/public/styles/home.css">
     <link rel="stylesheet" href="/public/styles/layout.css">
     <link rel="stylesheet" href="/public/styles/section.css">
@@ -29,23 +30,21 @@
 
         <main class="main">
             <div class="main__container">
-                <section class="create quiz">
+                <section class="create-quiz">
                     <h1>New quiz</h1>
 
-                            <input type="text" class="title" id="title" name="My title" value=""
-                                placeholder="Write your title">
-                            <br>
-                            <textarea type="text" id="description" class="description" placeholder="Description">
-                            </textarea>
-                            <br>
-                            <div class="center">
-                                <button type="button" id="createQuiz">Create Quiz</button>
-                                <br>
-                                <div id="field" class="field">
-                                </div>
-                                <a href="/home.html"><button class="create" id="create">Create♥</button></a>
-                            </div>
-
+                    <input type="text" class="title" id="title" name="My title" value="" placeholder="Write your title">
+                    <br>
+                    <textarea type="text" id="description" class="description" placeholder="Description"></textarea>
+                    <br>
+                    <div class="center">
+                        <button type="button" id="addQuestion">Add Question</button>
+                        <br>
+                        <div id="field" class="field">
+                        </div>
+                        <a href="/home.html"><button class="create" id="create">Create♥</button></a>
+                    </div>
+                    <script src="create.js"></script>
                 </section>
             </div>
         </main>

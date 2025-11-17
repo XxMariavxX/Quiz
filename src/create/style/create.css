@@ -27,10 +27,6 @@ input.title{
     
 }
 
-textarea::placeholder{
-  color:rgba(0, 0, 0, 0.63);
-}
-
 fieldset{
     align-items: center;
 }
@@ -46,4 +42,10 @@ button{
 
 .create{
     cursor:pointer;
+}
+
+.create-quiz{
+  display:flex;
+  flex-direction: column;
+  gap:5px;
 }

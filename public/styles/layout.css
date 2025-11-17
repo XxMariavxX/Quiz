@@ -1,5 +1,5 @@
 .header {
-  padding: 25px 240px;
+  padding: 25px 180px;
 }
 
 .header__container {
@@ -32,7 +32,7 @@
 }
 
 .footer {
-  padding: 20px 240px;
+  padding: 20px 180px;
   margin-top: auto;
 }
 
