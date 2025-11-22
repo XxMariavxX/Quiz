@@ -35,5 +35,5 @@ if (!currentQuiz) {
 
 }
 finishBtn.addEventListener("click", function(){
-  
+
 })
