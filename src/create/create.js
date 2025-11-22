@@ -42,13 +42,16 @@ addQuestion.addEventListener("click", function () {
     );
     const newAnswer = field.querySelector(".newAnswer:last-child");
     const deleteAnswer = newAnswer.querySelector(".deleteAnswer");
+
     deleteAnswer.addEventListener("click", function () {
       newAnswer.remove();
     });
   });
+
   deleteBlock.addEventListener("click", function () {
     field.remove();
   });
+  
 });
 
 function saveQuiz() {

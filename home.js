@@ -33,13 +33,13 @@ function renderQuiz(quiz, index) {
       quizzes.splice(index, 1);
       localStorage.setItem("quizzes", JSON.stringify(quizzes));
       section.innerHTML ="";
-      quizzes.forEach(renderquiz);
+      quizzes.forEach(renderQuiz);
     }
   });
 
   const startButton = card.querySelector(".start");
 
-  startButton.addEventListen("click", function (e) {
+  startButton.addEventListener("click", function (e) {
     const index = e.target.dataset.index;
     const selectedQuiz = quizzes[index];
 
@@ -47,4 +47,4 @@ function renderQuiz(quiz, index) {
   });
 }
 
-quizzes.forEach(renderQuiz(quiz, index));
+quizzes.forEach(renderQuiz);
