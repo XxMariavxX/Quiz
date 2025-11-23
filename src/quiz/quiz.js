@@ -22,18 +22,62 @@ if (!currentQuiz) {
     });
 
     const questionHTML = `
-    <fieldset>
-        ${q}
-      </fieldset>
-      <fieldset>
+    <fieldset class="question-block">
+        <div>${q}</div>
         ${answersHTML}
-      </fieldset>
+    </fieldset>
     `;
 
     questionsEl.insertAdjacentHTML("beforeend", questionHTML);
   });
 
 }
-finishBtn.addEventListener("click", function(){
 
-})
+document.querySelector("#section").insertAdjacentHTML("beforeend", `<a href="../result/result.html"><button onclick = "finishQuiz()">Finish</button></a>`)
+function finishQuiz() {
+  let id;
+  if(localStorage.getItem("results") !== null) {
+    id = JSON.parse(localStorage.getItem("results")).length + 1
+  }else {
+    id = 1
+  }
+  const fieldsets = questionsEl.querySelectorAll('fieldset')
+}
+
+
+//   const result = {
+//     quizId: currentQuiz.id,
+//     resultId:id,
+//     questions:[]
+
+//   }
+//   for(let i = 0; i <= currentQuiz.question.length - 1; i ++) {
+//   const inputs = fieldsets[i].querySelectorAll('input[type="checkbox"]')
+//   console.log(inputs)
+  
+//   const question = {correct_answers:[],
+//                   user_answer:[]
+//                   }
+//   question.name = currentQuiz.question[i]
+//     for(let j = 0; j <= currentQuiz.correct[i].length - 1; j++) {
+//       question.correct_answers.push(currentQuiz.correct[i][j])
+//       }
+//     for(let k = 0; k <= currentQuiz.answers[i].length - 1; k++) {
+//       const checked = inputs[k].checked
+//       if(checked) {
+//         question.user_answer.push(currentQuiz.answers[i][k])
+
+//     }
+//   }
+//   result.questions.push(question)
+
+//     }
+
+//   if (!localStorage.getItem("results")) {
+//     localStorage.setItem("results", JSON.stringify([result]));
+//   } else {
+//     const results = JSON.parse(localStorage.getItem("results"));
+//     results.push(result);
+//     localStorage.setItem("results", JSON.stringify(results));
+//   }
+// }

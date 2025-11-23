@@ -46,5 +46,11 @@ function renderQuiz(quiz, index) {
     localStorage.setItem("currentQuiz", JSON.stringify(selectedQuiz));
   });
 }
+function quizStart(id) {
+  const quizzes = JSON.parse(localStorage.getItem("quizzes"))
+  const selectedQuiz = quizzes.filter((quiz) => quiz.id == id)[0]
+  localStorage.setItem("currentQuiz", JSON.stringify(selectedQuiz))
+  window.location.href = "./src/quiz/quiz.html"
+}
 
 quizzes.forEach(renderQuiz);
