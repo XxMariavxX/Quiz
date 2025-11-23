@@ -42,21 +42,31 @@ addQuestion.addEventListener("click", function () {
     );
     const newAnswer = field.querySelector(".newAnswer:last-child");
     const deleteAnswer = newAnswer.querySelector(".deleteAnswer");
+
     deleteAnswer.addEventListener("click", function () {
       newAnswer.remove();
     });
   });
+
   deleteBlock.addEventListener("click", function () {
     field.remove();
   });
+  
 });
 
 function saveQuiz() {
   const form = document.querySelectorAll(".quiz");
+  let id;
+  if(localStorage.getItem("quizzes") !== null) {
+    id = JSON.parse(localStorage.getItem("quizzes")).length + 1
+  }else {
+    id = 1
+  }
 
   if (form.length === 0) return;
 
   const result = {
+    id:id,
     title: title.value.trim(),
     description: description.value.trim(),
     question: [],
@@ -92,6 +102,7 @@ function saveQuiz() {
     result.correct.push(questionCorrect);
   });
 
+// додати в окремий файл
   if (!localStorage.getItem("quizzes")) {
     localStorage.setItem("quizzes", JSON.stringify([result]));
   } else {
@@ -99,13 +110,6 @@ function saveQuiz() {
     quizzes.push(result);
     localStorage.setItem("quizzes", JSON.stringify(quizzes));
   }
-
-  console.log(localStorage.getItem("quizzes"));
-  console.log("Кількість питань:", result.amount);
-  console.log("Питання:", result.question);
-  console.log("Всі відповіді:", result.answers);
-  console.log("Правильні відповіді:", result.correct);
 }
 
 create.addEventListener("click", saveQuiz);
-

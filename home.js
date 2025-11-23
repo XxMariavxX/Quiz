@@ -1,4 +1,6 @@
 function escapeHTML(unsafe) {
+  if (typeof unsafe !== "string") return "";
+
   return unsafe
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -8,42 +10,48 @@ function escapeHTML(unsafe) {
 }
 
 const quizzes = JSON.parse(localStorage.getItem("quizzes")) || [];
-quizzes.forEach(renderquiz);
-console.log(localStorage.getItem("quizzes"));
 
-function renderquiz(quiz, index) {
+function renderQuiz(quiz, index) {
   const section = document.getElementById("quiz-card");
-  const card = document.createElement("div");
-  card.classList.add("quiz");
 
-  card.innerHTML = `
-    <h2>${escapeHTML(quiz.title)}</h2>
-    <p>${escapeHTML(quiz.description)}</p>
+  const myCard = `
+  <div class="myQuiz">
     <button class="delete">❌</button>
-    <button class="start">Start</button>
+    <h2 class="title">${escapeHTML(quiz.title)}</h2>
+    <p class="descroption">${escapeHTML(quiz.description)}</p>
+    <p class="amount">Questions:${quiz.amount}</p>
+    <button onclick="quizStart(${quiz.id})" class="start">Start</button>
+    </div>
   `;
-
-  section.appendChild(card);
+  section.insertAdjacentHTML("beforeend", myCard);
+  const card = section.lastElementChild;
 
   const deleteButton = card.querySelector(".delete");
-  deleteButton.addEventListener("click", () => {
-    if (confirm("Ви точно хочете видалити квіз?")) {
-      card.remove();               
-      quizzes.splice(index, 1);    
+  deleteButton.addEventListener("click", function () {
+    if (confirm("Do you really want to delete quiz?")) {
+      card.remove();
+      quizzes.splice(index, 1);
       localStorage.setItem("quizzes", JSON.stringify(quizzes));
+      section.innerHTML ="";
+      quizzes.forEach(renderQuiz);
     }
   });
 
   const startButton = card.querySelector(".start");
-  startButton.addEventListener("click", () => {
-    console.log("Назва квізу:", quiz.title);
-    
-  });
+
+  // startButton.addEventListener("click", function (e) {
+  //   const index = e.target.dataset.index;
+  //   const selectedQuiz = quizzes[index];
+
+  //   localStorage.setItem("currentQuiz", JSON.stringify(selectedQuiz));
+  // });
+}
+function quizStart(id) {
+  const quizzes = JSON.parse(localStorage.getItem("quizzes"))
+  const selectedQuiz = quizzes.filter((quiz) => quiz.id == id)[0]
+  localStorage.setItem("currentQuiz", JSON.stringify(selectedQuiz))
+  window.location.href = "./src/quiz/quiz.html"
+
 }
 
-
-
-
-
-
-    
+quizzes.forEach(renderQuiz);
