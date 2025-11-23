@@ -60,7 +60,14 @@ function finishQuiz() {
     // collect correct answers from quiz definition if present
     if (Array.isArray(currentQuiz.correct) && Array.isArray(currentQuiz.correct[i])) {
       for (let j = 0; j < currentQuiz.correct[i].length; j++) {
-        question.correct_answers.push(currentQuiz.correct[i][j]);
+        const c = currentQuiz.correct[i][j];
+        // `create.js` stores correct answers as objects { answerIndex, answerText }
+        if (c && typeof c === 'object' && 'answerText' in c) {
+          question.correct_answers.push(c.answerText);
+        } else {
+          // fallback: push raw value
+          question.correct_answers.push(c);
+        }
       }
     }
 
