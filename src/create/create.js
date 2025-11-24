@@ -102,7 +102,6 @@ function saveQuiz() {
     result.correct.push(questionCorrect);
   });
 
-// додати в окремий файл
   if (!localStorage.getItem("quizzes")) {
     localStorage.setItem("quizzes", JSON.stringify([result]));
   } else {
