@@ -25,7 +25,6 @@ This project became a reality thanks to:
   🧠    `Illya`  
   🎨    `Hashim`
 
-  
 \---
 
                                                    © 2025 Quiz Project. Made with inspiration. 💜
