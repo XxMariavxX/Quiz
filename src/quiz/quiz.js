@@ -12,16 +12,17 @@ if (!currentQuiz) {
   currentQuiz.question.forEach((q, qIndex) => {
     let answersHTML = "";
     currentQuiz.answers[qIndex].forEach((ans, aIndex) => {
-      const id = 
-      `q${qIndex}_a${aIndex}`;
-      answersHTML += 
-      `<div class="answerblock">
-      <input type="checkbox" name="q${qIndex}" id="${id}" value="${ans}">
-        <label for="${id}">${ans}</label>
+      let text = ans.answerText
+      const id =
+        `q${qIndex}_a${aIndex}`;
+      answersHTML +=
+        `<div class="answerblock">
+      <input type="checkbox" name="q${qIndex}" id="${id}" value="${text}">
+        <label for="${id}">${text}</label>
         <br></div>`;
-    });
+  });
 
-    const questionHTML = `
+  const questionHTML = `
     <fieldset class="question-block">
         <div>${q}</div>
         ${answersHTML}
@@ -29,16 +30,16 @@ if (!currentQuiz) {
 `;
 
 
-    questionsEl.insertAdjacentHTML("beforeend", questionHTML);
-  });
+  questionsEl.insertAdjacentHTML("beforeend", questionHTML);
+});
 
 }
 document.querySelector("#section").insertAdjacentHTML("beforeend", `<button onclick = "finishQuiz()">Finish</button>`)
 function finishQuiz() {
   let id;
-  if(localStorage.getItem("results") !== null) {
+  if (localStorage.getItem("results") !== null) {
     id = JSON.parse(localStorage.getItem("results")).length + 1
-  }else {
+  } else {
     id = 1
   }
   const fieldsets = questionsEl.querySelectorAll('fieldset')
@@ -47,31 +48,32 @@ function finishQuiz() {
 
   const result = {
     quizId: currentQuiz.id,
-    resultId:id,
-    questions:[]
+    resultId: id,
+    questions: []
 
   }
-  for(let i = 0; i <= currentQuiz.question.length - 1; i ++) {
-  const inputs = fieldsets[i].querySelectorAll('input[type="checkbox"]')
-  console.log(inputs)
-  
-  const question = {correct_answers:[],
-                  user_answer:[]
-                  }
-  question.name = currentQuiz.question[i]
-    for(let j = 0; j <= currentQuiz.correct[i].length - 1; j++) {
+  for (let i = 0; i <= currentQuiz.question.length - 1; i++) {
+    const inputs = fieldsets[i].querySelectorAll('input[type="checkbox"]')
+    console.log(inputs)
+
+    const question = {
+      correct_answers: [],
+      user_answer: []
+    }
+    question.name = currentQuiz.question[i]
+    for (let j = 0; j <= currentQuiz.correct[i].length - 1; j++) {
       question.correct_answers.push(currentQuiz.correct[i][j])
-      }
-    for(let k = 0; k <= currentQuiz.answers[i].length - 1; k++) {
+    }
+    for (let k = 0; k <= currentQuiz.answers[i].length - 1; k++) {
       const checked = inputs[k].checked
-      if(checked) {
+      if (checked) {
         question.user_answer.push(currentQuiz.answers[i][k])
 
+      }
     }
+    result.questions.push(question)
   }
-  result.questions.push(question)   
-    }
-    
+
   if (!localStorage.getItem("results")) {
     localStorage.setItem("results", JSON.stringify([result]));
   } else {
@@ -79,6 +81,7 @@ function finishQuiz() {
     results.push(result);
     localStorage.setItem("results", JSON.stringify(results));
   }
+  window.location.href = "../result/result.html"
 
 
 
