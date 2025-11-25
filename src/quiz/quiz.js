@@ -69,15 +69,9 @@ function finishQuiz() {
 
     }
   }
-  result.questions.push(question)
-
-      
+  result.questions.push(question)   
     }
-  
-
-
- 
-
+    
   if (!localStorage.getItem("results")) {
     localStorage.setItem("results", JSON.stringify([result]));
   } else {
