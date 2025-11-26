@@ -56,13 +56,13 @@
 
     <template id="quiz-card-template">
         <div class="myQuiz" data-quiz-id="">
-            <div class="quiz-header" >
-                <h2 class="title"></h2>
-                <button class="delete">❌</button>
+            <div class="quiz-header">
+                <h2 class="title" data-target="title"></h2>
+                <button class="delete" data-quiz-id="">❌</button>
             </div>
-            <p class="descroption"></p>
-            <p class="amount"></p>
-            <a href="./src/quiz/quiz.html"><button data-index="${index}" class="start">Start</button></a>
+            <p class="description" data-target="description"></p>
+            <p class="amount" data-target="amount"></p>
+            <a href="./src/quiz/quiz.html"><button class="start" data-quiz-id="">Start</button></a>
         </div>
     </template>
 
