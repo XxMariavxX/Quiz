@@ -30,7 +30,7 @@
 
         <main class="main">
             <div class="main__container">
-                <section  class="quiz-card" id="quiz-card">
+                <section class="quiz-card" id="quiz-card">
                 </section>
             </div>
         </main>
@@ -53,6 +53,19 @@
             </div>
         </footer>
     </div>
+
+    <template id="quiz-card-template">
+        <div class="myQuiz" data-quiz-id="">
+            <div class="quiz-header" >
+                <h2 class="title"></h2>
+                <button class="delete">❌</button>
+            </div>
+            <p class="descroption"></p>
+            <p class="amount"></p>
+            <a href="./src/quiz/quiz.html"><button data-index="${index}" class="start">Start</button></a>
+        </div>
+    </template>
+
     <script src="/home.js"></script>
 
 </body>
