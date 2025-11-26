@@ -15,7 +15,7 @@ if (!currentQuiz) {
       const id = `q${qIndex}_a${aIndex}`;
       answersHTML += `<div class="answerblock">
       <input type="checkbox" name="q${qIndex}" id="${id}" value="${ans}">
-        <label for="${id}">${ans}</label>
+        <label for="${id}">${ans.answerText}</label>
         <br></div>`;
     });
 

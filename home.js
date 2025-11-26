@@ -47,9 +47,10 @@ function renderQuiz(quiz, index) {
   });
 }
 function quizStart(id) {
-  const quizzes = JSON.parse(localStorage.getItem("quizzes"))
-  const selectedQuiz = quizzes.filter((quiz) => quiz.id == id)[0]
+  const quizzes = JSON.parse(localStorage.getItem("quizzes") || "[]")
+  const selectedQuiz = quizzes.find((quiz) => quiz.id == id)
   localStorage.setItem("currentQuiz", JSON.stringify(selectedQuiz))
+  console.log(currentQuiz);
 }
 
 quizzes.forEach(renderQuiz);

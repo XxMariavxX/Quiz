@@ -88,7 +88,10 @@ function saveQuiz() {
       const answerText = ansField.querySelector('input[type="text"]').value.trim();
       const checked = ansField.querySelector('input[type="checkbox"]').checked;
 
-      questionAnswers.push(answerText);
+      questionAnswers.push({
+          answerIndex: `q${qIndex + 1}_answer_${aIndex + 1}`,
+          answerText: answerText,
+        });
 
       if (checked) {
         questionCorrect.push({
