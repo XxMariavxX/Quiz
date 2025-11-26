@@ -31,10 +31,9 @@ for (let i = 0; i <= questions.length - 1; i++) {
     } 
     let score_question = (correct - wrong)/correct_answersIndex.length
     score += Math.max(0, Math.min(score_question, 1))
-
 }
 section.insertAdjacentHTML("afterbegin",
     `<div class = "score">
-    Ваш результат: ${score}
+    Ваш результат: ${Number(score.toFixed(2))}
     </div>`
  )
