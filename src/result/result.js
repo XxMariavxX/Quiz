@@ -7,14 +7,7 @@ let score = 0;
 const section = document.querySelector(".quiz-card");
 const button_tryagain = document.querySelector(".tryagain");
 
-let maxScore = 0;
-const keys = Object.keys(quizzes);
-for (let i of keys) {
-    console.log(i);
-  if ((i == "amount")) {
-    maxScore = quizzes[i];
-  }
-}
+let maxScore =quizzes.amount;
 
 for (let i = 0; i <= questions.length - 1; i++) {
   const correct_answersIndex = [];
@@ -37,11 +30,16 @@ for (let i = 0; i <= questions.length - 1; i++) {
     }
   }
   let score_question = (correct - wrong) / correct_answersIndex.length;
-  score += Math.max(0, Math.min(score_question, 1));
+  if (Number.isNaN(score_question)) {
+    score_question = 0;
+  } else {
+    score += Math.max(0, Math.min(score_question, 1));
+  }
 }
+
 section.insertAdjacentHTML(
   "afterbegin",
   `<div class = "score">
-    Your score: ${score}/${maxScore}
+    Your score: ${Number(score.toFixed(2))}/${maxScore}
     </div>`
 );

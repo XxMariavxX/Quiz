@@ -12,10 +12,11 @@ if (!currentQuiz) {
   currentQuiz.question.forEach((q, qIndex) => {
     let answersHTML = "";
     currentQuiz.answers[qIndex].forEach((ans, aIndex) => {
+      let text = ans.answerText;
       const id = `q${qIndex}_a${aIndex}`;
       answersHTML += `<div class="answerblock">
-      <input type="checkbox" name="q${qIndex}" id="${id}" value="${ans}">
-        <label for="${id}">${ans}</label>
+      <input type="checkbox" name="q${qIndex}" id="${id}" value="${text}">
+        <label for="${id}">${text}</label>
         <br></div>`;
     });
 
