@@ -38,6 +38,7 @@ document
     `<a href="../result/result.html"><button onclick = "finishQuiz()">Finish</button></a>`
   );
 function finishQuiz() {
+  if (!currentQuiz) return;
   let id;
   if (localStorage.getItem("results") !== null) {
     id = JSON.parse(localStorage.getItem("results")).length + 1;
