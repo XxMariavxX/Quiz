@@ -20,6 +20,8 @@ function renderQuiz(quiz) {
   const startButton = templateClone.querySelector('.start');
   startButton.dataset.quizId = quiz.id;
 
+  deleteButton.addEventListener("click", deleteFunction);
+
   return templateClone;
 }
 
@@ -36,8 +38,15 @@ if (quizListContainer) {
 
 
 
-
-
+deleteButton.addEventListener("click", function () {
+  if (confirm("Do you really want to delete quiz?")) {
+    card.remove();
+    quizzes.splice(index, 1);
+    localStorage.setItem("quizzes", JSON.stringify(quizzes));
+    section.innerHTML = "";
+    quizzes.forEach(renderQuiz);
+  }
+});
 
 
 

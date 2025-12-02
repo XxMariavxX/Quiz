@@ -58,11 +58,13 @@
         <div class="myQuiz" data-quiz-id="">
             <div class="quiz-header">
                 <h2 class="title" data-target="title"></h2>
-                <button class="delete" data-quiz-id="">❌</button>
+                <button class="delete" data-quiz-id="">Delete</button>
             </div>
             <p class="description" data-target="description"></p>
-            <p class="amount" data-target="amount"></p>
-            <a href="./src/quiz/quiz.html"><button class="start" data-quiz-id="">Start</button></a>
+            <div class="quiz-footer">
+                <p class="amount" data-target="amount"></p>
+                <a href="./src/quiz/quiz.html" class="start-shell"><button class="start" data-quiz-id="">Start</button></a>
+            </div>
         </div>
     </template>
 
