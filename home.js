@@ -16,12 +16,16 @@ function renderQuiz(quiz, index) {
 
   const myCard = `
   <div class="myQuiz">
-    <button class="delete">❌</button>
-    <h2 class="title">${escapeHTML(quiz.title)}</h2>
-    <p class="descroption">${escapeHTML(quiz.description)}</p>
-    <p class="amount">Questions:${quiz.amount}</p>
-    <a href="./src/quiz/quiz.html"><button data-index="${index}" class="start">Start</button></a>
+    <div class="title-container">
+      <h2 class="title">${escapeHTML(quiz.title)}</h2>
+      <button class="delete">❌</button>
     </div>
+    <p class="description">${escapeHTML(quiz.description)}</p>
+    <div class="action-container">
+      <a href="./src/quiz/quiz.html"><button data-index="${index}" class="start">Start</button></a>
+      <p class="amount">Questions:${quiz.amount}</p>
+    </div>
+  </div>
   `;
   section.insertAdjacentHTML("beforeend", myCard);
   const card = section.lastElementChild;
@@ -32,7 +36,7 @@ function renderQuiz(quiz, index) {
       card.remove();
       quizzes.splice(index, 1);
       localStorage.setItem("quizzes", JSON.stringify(quizzes));
-      section.innerHTML ="";
+      section.innerHTML = "";
       quizzes.forEach(renderQuiz);
     }
   });
