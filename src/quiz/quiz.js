@@ -39,6 +39,7 @@ document
   );
 function finishQuiz() {
   let id;
+  if (!currentQuiz) return;
   if (localStorage.getItem("results") !== null) {
     id = JSON.parse(localStorage.getItem("results")).length + 1;
   } else {

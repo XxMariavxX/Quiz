@@ -1,11 +1,12 @@
 const quizzes = JSON.parse(localStorage.getItem("currentQuiz"));
 console.log(quizzes);
 let result = JSON.parse(localStorage.getItem("results"));
+const section = document.querySelector(".quiz-card");
+const button_tryagain = document.querySelector(".tryagain");
+
 result = result[result.length - 1];
 const questions = result.questions;
 let score = 0;
-const section = document.querySelector(".quiz-card");
-const button_tryagain = document.querySelector(".tryagain");
 
 let maxScore =quizzes.amount;
 
