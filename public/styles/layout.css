@@ -28,11 +28,12 @@
 }
 
 .nav__link a {
-  margin: 10px 20px;
+  margin: 10px;
   display: inline-block;
   text-decoration: none;
   text-align: center;
   font-weight: bold;
+  height:20px;
 }
 
 .footer {
@@ -65,12 +66,12 @@
 
 .foooter-title {
   text-align: center;
-  font-size: 2em;
+  font-size: 1em;
 
 }
 
 .footer-img {
-  width: 50px;
+  max-width: 50px;
   height: auto;
 }
 
@@ -87,10 +88,11 @@
 .footer-right ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap:10px;
+  gap: var(50px-1fr);
 }
 
 .footer-right li {
-  margin: 10%;
+  margin: 5%;
   font-weight: 800;
+  font-size: 1em;
 }
