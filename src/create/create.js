@@ -8,7 +8,7 @@ const center = document.querySelector("#center");
 const addQuestion = document.querySelector("#addQuestion");
 const create = document.querySelector("#create");
 
-const MaxLengthTitle = 30;
+const MaxLengthTitle = 20;
 title.setAttribute("maxlength", MaxLengthTitle);
 
 title.addEventListener("input", function(event){
@@ -28,7 +28,7 @@ title.addEventListener("input", function(event){
   }
 })
 
-const MaxLengthDescr = 100;
+const MaxLengthDescr = 50;
 description.setAttribute("maxlength", MaxLengthDescr);
 
 description.addEventListener("input", function(event){

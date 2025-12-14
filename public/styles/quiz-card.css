@@ -1,24 +1,19 @@
-#quiz-cards {
+.quiz-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   padding: 20px;
 }
 
-.quiz-card {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 20px 24px;
+.card {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  padding:10px;
 
-  display: grid;
-  grid-template-columns: 40px 1fr auto auto;
-  align-items: center;
-  column-gap: 24px;
-
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  background-color: #ffffff;
+  border-radius:12px;
+  border: 2px solid #c9d9f2;
+  box-shadow: 0 12px 32px #dedbdd97;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -43,7 +38,6 @@
   word-break: break-word;
 }
 
-/* Delete button */
 .delete {
   background: transparent;
   border: none;
@@ -58,17 +52,16 @@
   opacity: 0.8;
 }
 
-/* Description */
 .description {
   flex-wrap: wrap;
   font-size: 0.95rem;
   color: #4b5563;
   line-height: 1.5;
   margin: 0;
+  padding: 15px 0;
   flex-grow: 1;
 }
 
-/* Bottom actions */
 .action-container {
   display: flex;
   align-items: center;
@@ -77,7 +70,6 @@
   margin-top: auto;
 }
 
-/* Questions count */
 .amount {
   font-size: 0.9rem;
   font-weight: 500;

@@ -9,12 +9,14 @@ function escapeHTML(unsafe) {
     .replace(/'/g, "&#039;");
 }
 
+const section = document.querySelector(".quiz-cards");
+
 const quizzes = JSON.parse(localStorage.getItem("quizzes")) || [];
 
 function renderQuiz(quiz, index) {
-  const section = document.querySelector("#quiz-cards");
 
   const myCard = `
+  <div class="card">
   <div class="title-container">
     <button class="delete">❌</button>
     <h2 class="title">${escapeHTML(quiz.title)}</h2>
@@ -26,11 +28,15 @@ function renderQuiz(quiz, index) {
     <p class="amount">Questions:${quiz.amount}</p>
     <a href="./src/quiz/quiz.html"><button data-index="${index}" class="start">Start</button></a>
     </div>
+    </div>
   `;
+
   section.insertAdjacentHTML("beforeend", myCard);
-  const card = section.firstElementChild;
+
+  let card = section.lastElementChild;
 
   const deleteButton = card.querySelector(".delete");
+
   deleteButton.addEventListener("click", function () {
     if (confirm("Do you really want to delete quiz?")) {
       card.remove();
