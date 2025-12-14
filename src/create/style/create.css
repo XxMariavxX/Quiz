@@ -1,3 +1,7 @@
+.section{
+  width: 100%;
+}
+
 .section-create {
   display: flex;
   flex-direction: column;
@@ -5,9 +9,9 @@
 }
 
 .main-conteiner {
+  display: flex;
   width: 100vw;
   height: 72.5vh;
-  display: flex;
 }
 
 .sidebar {
@@ -25,7 +29,6 @@ input.title {
   outline: none;
   font-style: italic;
 }
-
 
 .description{
   width: 100%;
@@ -80,6 +83,24 @@ button {
   margin: 0;
   margin-top: 5px;
   cursor: pointer;
+}
+
+#outputN, #outputNumb{
+  text-align: center;
+  font-size:medium;
+  font-weight: bold;
+  border-radius: 12px;
+  background-color: #ffffff;
+  border: 2px solid #c9d9f2;
+  font-weight: 500 ;
+}
+
+#outputN{
+  max-width: 80px;
+}
+
+#outputNumb{
+  max-width: 60px;
 }
 
 .create-quiz {

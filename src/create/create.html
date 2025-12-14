@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../public/styles/layout.css">
     <link rel="stylesheet" href="../../public/styles/section.css">
     <link rel="stylesheet" href="../create/style/form.css">
+    <link rel="stylesheet" href="../create/style/media.css">
     <link rel="icon" type="image/x-icon" href="../../public/favicon.ico">
     <title>Quiz</title>
 </head>
@@ -36,8 +37,10 @@
                     <h1>New quiz</h1>
 
                     <input type="text" class="title" id="title" name="My title" value="" placeholder="Write your title">
+                    <output name="output" id="outputNumb">0 / 30</output>
                     <br>
                     <textarea type="text" id="description" class="description" placeholder="Description"></textarea>
+                    <output name="output" id="outputN">0 / 100</output>
                     <br>
                     <div class="center">
                         <button type="button" id="addQuestion" class="addQuestion">Add Question</button>
@@ -69,7 +72,7 @@
             </div>
         </footer>
     </div>
-    <script src="/src/create/create.js"></script>
+    <script src="../create/create.js"></script>
 </body>
 
 </html>

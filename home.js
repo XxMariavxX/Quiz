@@ -12,19 +12,23 @@ function escapeHTML(unsafe) {
 const quizzes = JSON.parse(localStorage.getItem("quizzes")) || [];
 
 function renderQuiz(quiz, index) {
-  const section = document.getElementById("quiz-card");
+  const section = document.querySelector("#quiz-cards");
 
   const myCard = `
-  <div class="myQuiz">
+  <div class="title-container">
     <button class="delete">❌</button>
     <h2 class="title">${escapeHTML(quiz.title)}</h2>
-    <p class="descroption">${escapeHTML(quiz.description)}</p>
+    </div>
+
+    <p class="description">${escapeHTML(quiz.description)}</p>
+
+    <div class="action-container">
     <p class="amount">Questions:${quiz.amount}</p>
     <a href="./src/quiz/quiz.html"><button data-index="${index}" class="start">Start</button></a>
     </div>
   `;
   section.insertAdjacentHTML("beforeend", myCard);
-  const card = section.lastElementChild;
+  const card = section.firstElementChild;
 
   const deleteButton = card.querySelector(".delete");
   deleteButton.addEventListener("click", function () {
@@ -32,12 +36,13 @@ function renderQuiz(quiz, index) {
       card.remove();
       quizzes.splice(index, 1);
       localStorage.setItem("quizzes", JSON.stringify(quizzes));
-      section.innerHTML ="";
+      section.innerHTML = "";
       quizzes.forEach(renderQuiz);
     }
   });
 
-  const startButton = card.querySelector(".start");
+  const start = section.lastElementChild;
+  const startButton = start.querySelector(".start");
 
   startButton.addEventListener("click", function (e) {
     const index = e.target.dataset.index;
@@ -47,9 +52,9 @@ function renderQuiz(quiz, index) {
   });
 }
 function quizStart(id) {
-  const quizzes = JSON.parse(localStorage.getItem("quizzes") || "[]")
-  const selectedQuiz = quizzes.find((quiz) => quiz.id == id)
-  localStorage.setItem("currentQuiz", JSON.stringify(selectedQuiz))
+  const quizzes = JSON.parse(localStorage.getItem("quizzes") || "[]");
+  const selectedQuiz = quizzes.find((quiz) => quiz.id == id);
+  localStorage.setItem("currentQuiz", JSON.stringify(selectedQuiz));
   console.log(currentQuiz);
 }
 

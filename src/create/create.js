@@ -1,10 +1,52 @@
-const title = document.getElementById("title");
-const description = document.getElementById("description");
-const block = document.getElementById("field");
-const container = document.getElementById("create-quiz");
-const center = document.getElementById("center");
-const addQuestion = document.getElementById("addQuestion");
-const create = document.getElementById("create");
+const title = document.querySelector("#title");
+const output = document.querySelector("#outputNumb")
+const description = document.querySelector("#description");
+const count = document.querySelector("#outputN")
+const block = document.querySelector("#field");
+const container = document.querySelector("#create-quiz");
+const center = document.querySelector("#center");
+const addQuestion = document.querySelector("#addQuestion");
+const create = document.querySelector("#create");
+
+const MaxLengthTitle = 30;
+title.setAttribute("maxlength", MaxLengthTitle);
+
+title.addEventListener("input", function(event){
+  
+  let currentLength = event.target.value.length;
+
+  output.textContent= `${currentLength} / ${MaxLengthTitle}`;
+
+  if (event.target.value.length === MaxLengthTitle){
+    output.style.color = "#DC143C";
+  }
+  else if (event.target.value.length === 0){
+    output.style.color = "";
+  }
+  else {
+    output.style.color = "green";
+  }
+})
+
+const MaxLengthDescr = 100;
+description.setAttribute("maxlength", MaxLengthDescr);
+
+description.addEventListener("input", function(event){
+  
+  let currentLength = event.target.value.length;
+
+  count.textContent= `${currentLength} / ${MaxLengthDescr}`;
+
+  if (event.target.value.length === MaxLengthDescr){
+    count.style.color = "#DC143C";
+  }
+  else if (event.target.value.length === 0){
+    count.style.color = "";
+  }
+  else {
+    count.style.color = "green";
+  }
+})
 
 addQuestion.addEventListener("click", function () {
   block.insertAdjacentHTML(

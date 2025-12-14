@@ -1,21 +1,24 @@
-.header{
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: clamp(20px, 12vw, 180px);
-  padding-right: clamp(20px, 12vw, 180px);
+.header {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  padding-block: clamp(12px, 3vw, 20px);
+  padding-inline: clamp(16px, 6vw, 180px);
   margin-top: auto;
 }
 
 .header__container {
-  padding: 5px 30px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   border-radius: 16px;
   background-color: rgba(238, 170, 170, 0.5);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.414);
+
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(4px);
+  max-width: 100vw;
+  gap: clamp(8px, 2vw, 20px);
 }
 
 .logo__img {
@@ -25,6 +28,9 @@
 
 .header-container__nav {
   display: flex;
+  width: 100%;
+  min-width: 300px;
+  right: 0;
 }
 
 .nav__link a {
@@ -33,7 +39,7 @@
   text-decoration: none;
   text-align: center;
   font-weight: bold;
-  height:20px;
+  height: 20px;
 }
 
 .footer {
@@ -48,6 +54,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: clamp(1rem, 2vw);
   background: rgba(238, 170, 170, 0.5);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.414);
@@ -67,7 +74,6 @@
 .foooter-title {
   text-align: center;
   font-size: 1em;
-
 }
 
 .footer-img {
@@ -88,7 +94,6 @@
 .footer-right ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(50px-1fr);
 }
 
 .footer-right li {
