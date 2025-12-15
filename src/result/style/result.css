@@ -1,5 +1,11 @@
+.section{
+  display: flex;
+  justify-content: center;
+}
+
 .score{
-  text-align: justify;
+  display: flex;
+  justify-content: center;
   align-items: center;
   font-size: 1.5em;
   font-weight: bold;
@@ -30,7 +36,14 @@
 
 .reaction{
   display: flex;
-  justify-content: right;
-  margin: 0;
-  margin-right: 20px;
+  margin-top: 20px;
+  max-width: 100%; 
+  height: auto
+}
+
+.congrat{
+  display: flex;
+  justify-content: center;
+  font-size: 1.6em;
+  padding-right: 30px;
 }

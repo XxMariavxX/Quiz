@@ -48,23 +48,25 @@ const userScore = Number(score.toFixed(2));
 let img = "";
 
 if (userScore === maxScore) {
-  img = "<img class = 'reaction' src='../../public/rabbit.gif'>"
+  img = "<img class = 'reaction' src='../../public/highscore.png' alt='rabbit'>"
 
 } else if (maxScore > userScore && userScore >= maxScore / 2) {
-  img = "<img class = 'reaction' src='../../public/rabbit.gif'>"
+  img = "<img class = 'reaction' src='../../public/arrangescore.gif' alt='rabbit'>"
 } else {
-  img = "<img class = 'reaction' src='../../public/rabbit.gif'>"
+  img = "<img class = 'reaction' src='../../public/smallscore.gif' alt='rabbit'>"
 }
 
 section.insertAdjacentHTML(
-  'beforeend',
+  "afterbegin",
   img
 )
 
 section.insertAdjacentHTML(
-  "afterbegin",
-  `<div class = "score">
-    Your score ♥ : ${userScore}/${maxScore}
+  "beforebegin",
+  `
+   <div class = "score">
+    <div class = "congrat">Quiz Finished 🎉</div>
+    <div class = "Userscore"> Your score ♥ : ${userScore}/${maxScore}</div>
     </div>`
 );
 
