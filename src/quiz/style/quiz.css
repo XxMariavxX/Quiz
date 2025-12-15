@@ -62,3 +62,7 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(42, 41, 43, 0.342);
 }
+
+.check{
+  cursor: pointer;
+}

@@ -123,7 +123,6 @@ button {
 
 .create:hover {
   background: #ff2c9cac;      
-  box-shadow: 0 6px 14px rgba(230, 150, 190, 0.35);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(42, 41, 43, 0.342);
 }
