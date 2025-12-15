@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/create/style/create.css">
-    <link rel="stylesheet" href="/src/create/style/media.css">
-    <link rel="stylesheet" href="/public/styles/home.css">
-    <link rel="stylesheet" href="/public/styles/layout.css">
-    <link rel="stylesheet" href="/public/styles/section.css">
-    <link rel="stylesheet" href="/src/create/style/form.css">
-    <link rel="icon" type="image/x-icon" href="/public/favicon.ico">
+    <link rel="stylesheet" href="../create/style/create.css">
+    <link rel="stylesheet" href="../../public/styles/home.css">
+    <link rel="stylesheet" href="../../public/styles/layout.css">
+    <link rel="stylesheet" href="../../public/styles/section.css">
+    <link rel="stylesheet" href="../create/style/form.css">
+    <link rel="icon" type="image/x-icon" href="../../public/favicon.ico">
     <title>Quiz</title>
 </head>
 
@@ -20,7 +19,8 @@
         <header class="header">
             <div class="header__container header-container">
                 <div class="header-container__logo logo">
-                    <img src="/public/favicon.ico" alt="QuizLogo" class="logo__img">
+                    <a href="../../home.html"><img src="/public/favicon.ico" alt="QuizLogo" class="logo__img">
+                      </a>
                 </div>
                 <nav class="header-container__nav">
                     <div class="nav__link"><a href="/home.html">Home</a></div>
@@ -36,9 +36,26 @@
                     <h1>New quiz</h1>
 
                     <input type="text" class="title" id="title" name="My title" value="" placeholder="Write your title">
+                    <output name="output" id="outputNumb">0 / 20</output>
                     <br>
                     <textarea type="text" id="description" class="description" placeholder="Description"></textarea>
+                    <output name="output" id="outputN">0 / 50</output>
                     <br>
+                    <div class = "time">
+                        <span>Time:</span>
+                        <label>
+                            hours
+                            <input type ="number" id = "hours" min= "0" max ="23" placeholder="00"></input>
+                        </label>
+                        <label>
+                            minutes
+                            <input type = "number" id = "minutes" min ="0" max ="59" placeholder ="00"></input>
+                        </label>
+                        <label>
+                            seconds
+                            <input type = "number" id="seconds" min ="0" max ="59" placeholder ="00"></input>
+                        </label>
+                    </div>
                     <div class="center">
                         <button type="button" id="addQuestion" class="addQuestion">Add Question</button>
                         <br>
@@ -69,7 +86,7 @@
             </div>
         </footer>
     </div>
-    <script src="/src/create/create.js"></script>
+    <script src="../create/create.js"></script>
 </body>
 
 </html>

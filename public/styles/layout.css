@@ -1,26 +1,25 @@
-.header{
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: clamp(20px, 12vw, 180px);
-  padding-right: clamp(20px, 12vw, 180px);
-  margin-top: auto;
+.header {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  padding-block: clamp(12px, 3vw, 20px);
+  padding: 10px 20px;
 }
 
 .header__container {
-  padding: 5px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
+
   border-radius: 16px;
   background-color: rgba(238, 170, 170, 0.5);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.414);
+
   backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(4px);
+  width:100%;
 }
 
 .logo__img {
-  width: 100px;
-  height: auto;
+  max-width: 100px;
 }
 
 .header-container__nav {
@@ -28,15 +27,16 @@
 }
 
 .nav__link a {
-  margin: 10px 20px;
+  margin: 10px;
   display: inline-block;
   text-decoration: none;
   text-align: center;
   font-weight: bold;
+  height: 20px;
 }
 
 .footer {
-  padding-top: 20px;
+  padding-top: 15px;
   padding-bottom: 20px;
   padding-left: clamp(20px, 12vw, 180px);
   padding-right: clamp(20px, 12vw, 180px);
@@ -47,13 +47,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+
+  font-size: clamp(0.5rem, 2vw,1rem);
   background: rgba(238, 170, 170, 0.5);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.414);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   padding: 10px 40px;
-  gap: 20%;
+  gap: 20px;
 }
 
 .footer-left {
@@ -65,13 +68,11 @@
 
 .foooter-title {
   text-align: center;
-  font-size: 2em;
-
+  font-size: 1em;
 }
 
 .footer-img {
-  width: 50px;
-  height: auto;
+  max-width: 50px;
 }
 
 .footer-right {
@@ -87,10 +88,10 @@
 .footer-right ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap:10px;
 }
 
 .footer-right li {
-  margin: 10%;
+  margin: 5%;
   font-weight: 800;
+  font-size: 1em;
 }
