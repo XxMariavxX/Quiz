@@ -10,10 +10,19 @@ function escapeHTML(unsafe) {
 }
 
 const section = document.querySelector(".quiz-cards");
-
 const quizzes = JSON.parse(localStorage.getItem("quizzes")) || [];
 
 function renderQuiz(quiz, index) {
+
+  const hours = quiz.time.hours.toString().padStart(2, "0")
+  const minutes = quiz.time.minutes.toString().padStart(2, "0")
+  const seconds = quiz.time.seconds.toString().padStart(2, "0")
+
+  if(quiz.time.hours <= 0 && quiz.time.minutes <= 0 && quiz.time.seconds <= 0) {
+    timerText = "Time:unlimited"
+  }else{
+    timerText = `Time:${hours}:${minutes}:${seconds}`
+  }
 
   const myCard = `
   <div class="card">
@@ -21,12 +30,17 @@ function renderQuiz(quiz, index) {
     <button class="delete">❌</button>
     <h2 class="title">${escapeHTML(quiz.title)}</h2>
     </div>
-
-    <p class="description">${escapeHTML(quiz.description)}</p>
-
+    
+    <div class="description">
+    ${escapeHTML(quiz.description)} 
+    </div>
+  
+    <div>
+    <span id = "timer">${timerText}</span>
+    </div>
     <div class="action-container">
     <p class="amount">Questions:${quiz.amount}</p>
-    <a href="./src/quiz/quiz.html"><button data-index="${index}" class="start">Start</button></a>
+    <button data-index="${index}" class="start">Start</button>
     </div>
     </div>
   `;
@@ -51,6 +65,13 @@ function renderQuiz(quiz, index) {
   const startButton = start.querySelector(".start");
 
   startButton.addEventListener("click", function (e) {
+    if(quiz.hours > 0 || quiz.time.minutes > 0 || quiz.time.seconds > 0){
+      const agree = confirm("Цей квіз обмежений у часі, ви впевнені що хочете розпочати?")
+      if(!agree) {
+        return
+    }
+  }
+    window.location.href = "./src/quiz/quiz.html"
     const index = e.target.dataset.index;
     const selectedQuiz = quizzes[index];
 
