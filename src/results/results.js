@@ -96,7 +96,7 @@ if (results.length === 0) {
       padding: 20px; border-radius: 16px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
           <h2 style="margin: 0; font-size: 1.5rem; color: #301832;">${escapeHTML(quizTitle)}</h2>
-          <span style="font-size: 1.2rem; font-weight: bold; background: #f7b5d9; padding: 5px 15px; border-radius: 12px;">
+          <span style="font-size: 1rem; font-weight: bold; background: #f7b5d9; padding: 5px 15px; border-radius: 12px;">
             ${finalScore} / ${maxScore}
           </span>
         </div>
@@ -118,9 +118,14 @@ const clearBtn = document.getElementById("clear-results");
 
 if (clearBtn) {
     clearBtn.addEventListener("click", () => {
-        if (confirm("Are you sure you want to clear all results?")) {
+        const results = localStorage.getItem("results");
+
+        if(!results){
+          confirm("You have nothing to clear ♥")
+        }
+        else if (confirm("Are you sure you want to clear all results?☺")) {
             localStorage.removeItem("results");
-            resultsContainer.innerHTML = "<div class='no-results'>No results yet</div>";
+            resultsContainer.innerHTML = '<div class="no-results">No results yet</div>';
             window.location.reload();
         }
     });

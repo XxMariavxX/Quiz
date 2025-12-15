@@ -22,13 +22,15 @@
 }
 
 .clear-btn {
+  cursor: pointer;
+  margin: 20px;
   background-color: #ff3157f8;
   color: white;
   border: none;
   padding: 8px 16px;
   border-radius: 12px;
   font-weight: bold;
-  height: 50px;
+  height: 60px;
   max-width: 100px;
   margin-bottom: 15px;
   box-shadow: 0 4px 10px rgba(255, 77, 109, 0.3);
@@ -36,8 +38,15 @@
 }
 
 .clear-btn:hover {
-  background-color: #e03e5d;
   border: none;
   border-radius: 12px;
   transform: scale(1.05);
+}
+
+.no-results {
+  margin: 20px;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-style: italic;
 }
