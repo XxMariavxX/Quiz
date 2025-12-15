@@ -5,7 +5,6 @@
 }
 
 .result-card {
-  margin: 20px;
   transition: transform 0.2s ease;
 }
 
@@ -23,7 +22,6 @@
 
 .clear-btn {
   cursor: pointer;
-  margin: 20px;
   background-color: #ff3157f8;
   color: white;
   border: none;

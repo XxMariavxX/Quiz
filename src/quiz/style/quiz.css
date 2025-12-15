@@ -1,57 +1,64 @@
-.center{
+.center {
   width: 100%;
 }
 
 #quiz-title {
-    display: inline-block;
-    overflow-wrap: break-word;
-    border: none;
-    max-width: 150px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  border: none;
+  max-width: 150px;
 
-    margin: 10px;
-    border-radius: 10px;
-    font-weight: 600;
+  margin: 10px;
+  border-radius: 10px;
+  font-weight: 600;
 }
 
 #quiz-questions {
-    min-width: 30%;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    border: 2px solid #c9d9f2;
-    padding: 20px;
-    border-radius: 16px;
-    background: #f4f6fa;
-    box-shadow: 0 4px 12px rgba(150, 170, 200, 0.15);
+  min-width: 30%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 2px solid #c9d9f2;
+  padding: 20px;
+  border-radius: 16px;
+  background: #f4f6fa;
+  box-shadow: 0 4px 12px rgba(150, 170, 200, 0.15);
 }
 
 .question-block {
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 
-    margin-bottom: 10px;
-    background: white;
-    padding: 12px 14px;
-    border-radius: 10px;
-    border: 2px solid #d7e2f0;
+  margin-bottom: 10px;
+  background: white;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 2px solid #d7e2f0;
 }
 
 #section a button {
-    margin-top: 10px;
-    cursor: pointer;
-    background: #f7b5d9;
-    border: none;
+  margin-top: 15px;
+  cursor: pointer;
+  background: #f7b5d9;
+  border: none;
 
-    font-weight: 700;
-    font-size: 18px;
+  font-weight: 700;
+  font-size: 18px;
 
-    padding: 14px 24px;
-    border-radius: 14px;
-    cursor: pointer;
+  padding: 14px 24px;
+  border-radius: 14px;
+  cursor: pointer;
 
-    transition: 0.25s;
+  transition: 0.25s;
 
-    box-shadow: 0 4px 12px rgba(240, 150, 190, 0.25);
+  box-shadow: 0 4px 12px rgba(240, 150, 190, 0.25);
+}
+
+#section a button:hover {
+  background: #ff2c9cac;  
+  box-shadow: 0 6px 14px rgba(230, 150, 190, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(42, 41, 43, 0.342);
 }

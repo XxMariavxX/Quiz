@@ -27,12 +27,20 @@
 }
 
 .nav__link a {
-  margin: 10px;
+  margin: 0 5px;
+  align-content: center;
   display: inline-block;
   text-decoration: none;
   text-align: center;
   font-weight: bold;
-  height: 20px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.nav__link a:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(42, 41, 43, 0.342);
 }
 
 .footer {
@@ -63,7 +71,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
 }
 
 .foooter-title {
@@ -73,6 +81,11 @@
 
 .footer-img {
   max-width: 50px;
+}
+
+.footer-img:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(42, 41, 43, 0.342);
 }
 
 .footer-right {

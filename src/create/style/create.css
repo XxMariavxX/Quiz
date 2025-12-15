@@ -71,17 +71,12 @@ input::placeholder {
 }
 
 #addQuestion:hover {
-  background: #d55d87cd;
-  box-shadow: 0 4px 12px rgba(110, 140, 200, 0.3);
+  background: #f0538acd;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(42, 41, 43, 0.342);
 }
 
 button {
-  cursor: pointer;
-}
-
-.create {
-  margin: 0;
-  margin-top: 5px;
   cursor: pointer;
 }
 
@@ -109,7 +104,7 @@ button {
   gap: 5px;
 }
 
-#create {
+.create {
   background: #f7b5d9;       
   border: none;
 
@@ -126,7 +121,9 @@ button {
   box-shadow: 0 4px 12px rgba(240, 150, 190, 0.25);
 }
 
-#create:hover {
-  background: #ff7ec3df;      
+.create:hover {
+  background: #ff2c9cac;      
   box-shadow: 0 6px 14px rgba(230, 150, 190, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(42, 41, 43, 0.342);
 }
