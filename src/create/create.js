@@ -7,6 +7,9 @@ const container = document.querySelector("#create-quiz");
 const center = document.querySelector("#center");
 const addQuestion = document.querySelector("#addQuestion");
 const create = document.querySelector("#create");
+const minutes = document.querySelector("#minutes")
+const hours = document.querySelector("#hours")
+const seconds = document.querySelector("#seconds")
 
 const MaxLengthTitle = 20;
 title.setAttribute("maxlength", MaxLengthTitle);
@@ -111,13 +114,20 @@ function saveQuiz() {
     id:id,
     title: title.value.trim(),
     description: description.value.trim(),
+    time: {
+      hours:+hours.value || 0,
+      minutes:+minutes.value || 0,
+      seconds:+seconds.value || 0
+    },
     question: [],
     answers: [],
     correct: [],
     amount: form.length, 
   };
+  console.log(result.time)
 
   form.forEach((quizField, qIndex) => {
+
 
     const questionText = quizField.querySelector(".question").value.trim();
     result.question.push(questionText);
