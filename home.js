@@ -12,14 +12,29 @@ function escapeHTML(unsafe) {
 const section = document.querySelector(".quiz-cards");
 const quizzes = JSON.parse(localStorage.getItem("quizzes")) || [];
 
-function renderQuiz(quiz, index) {
+function render(){
+  section.innerHTML = "";
 
+  if (quizzes.length === 0){
+    section.insertAdjacentHTML("afterbegin", 
+      `
+      <div>You don't have any quizzes yet
+      <br> Let's create it !!!<div>
+      <a href = "/src/create/create.html"><button type = "button" class="create">Create it♥</button></a>
+      `
+    )
+    return 
+  }
+  quizzes.forEach(renderQuiz);
+}
+
+function renderQuiz(quiz, index) {
   const hours = quiz.time.hours.toString().padStart(2, "0")
   const minutes = quiz.time.minutes.toString().padStart(2, "0")
   const seconds = quiz.time.seconds.toString().padStart(2, "0")
 
   if(quiz.time.hours <= 0 && quiz.time.minutes <= 0 && quiz.time.seconds <= 0) {
-    timerText = "Time:unlimited"
+    timerText = "Time: unlimited"
   }else{
     timerText = `Time:${hours}:${minutes}:${seconds}`
   }
@@ -52,13 +67,11 @@ function renderQuiz(quiz, index) {
   const deleteButton = card.querySelector(".delete");
 
   deleteButton.addEventListener("click", function () {
-    if (confirm("Do you really want to delete quiz?")) {
-      card.remove();
+    if (!confirm("Do you really want to delete quiz?")) return ;
+
       quizzes.splice(index, 1);
       localStorage.setItem("quizzes", JSON.stringify(quizzes));
-      section.innerHTML = "";
-      quizzes.forEach(renderQuiz);
-    }
+      render();
   });
 
   const start = section.lastElementChild;
@@ -66,7 +79,7 @@ function renderQuiz(quiz, index) {
 
   startButton.addEventListener("click", function (e) {
     if(quiz.hours > 0 || quiz.time.minutes > 0 || quiz.time.seconds > 0){
-      const agree = confirm("Цей квіз обмежений у часі, ви впевнені що хочете розпочати?")
+      const agree = confirm("This quiz is time limited, are you sure you want to start??")
       if(!agree) {
         return
     }
@@ -79,10 +92,9 @@ function renderQuiz(quiz, index) {
   });
 }
 function quizStart(id) {
-  const quizzes = JSON.parse(localStorage.getItem("quizzes") || "[]");
   const selectedQuiz = quizzes.find((quiz) => quiz.id == id);
   localStorage.setItem("currentQuiz", JSON.stringify(selectedQuiz));
   console.log(currentQuiz);
 }
 
-quizzes.forEach(renderQuiz);
+render()

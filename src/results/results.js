@@ -1,5 +1,4 @@
-const resultsContainer = document.getElementById("results");
-
+const resultsContainer = document.getElementById("results");4
 const results = JSON.parse(localStorage.getItem("results")) || [];
 const quizzes = JSON.parse(localStorage.getItem("quizzes")) || [];
 

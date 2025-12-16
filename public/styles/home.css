@@ -17,3 +17,26 @@
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
 }
+
+.create {
+  background: #f7b5d9;       
+  border: none;
+
+  font-weight: 700;
+  font-size: 18px;
+
+  padding: 14px 24px;
+  border-radius: 14px;
+  cursor: pointer;
+
+  transition: 0.25s;
+  margin-top: 18px;
+
+  box-shadow: 0 4px 12px rgba(240, 150, 190, 0.25);
+}
+
+.create:hover {
+  background: #ff2c9cac;      
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(42, 41, 43, 0.342);
+}
