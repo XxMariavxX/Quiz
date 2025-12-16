@@ -6,10 +6,10 @@ const block = document.querySelector("#field");
 const container = document.querySelector("#create-quiz");
 const center = document.querySelector("#center");
 const addQuestion = document.querySelector("#addQuestion");
-const create = document.querySelector("#create");
 const minutes = document.querySelector("#minutes")
 const hours = document.querySelector("#hours")
 const seconds = document.querySelector("#seconds")
+const create = document.querySelector("#create")
 
 const MaxLengthTitle = 20;
 title.setAttribute("maxlength", MaxLengthTitle);
@@ -62,7 +62,7 @@ addQuestion.addEventListener("click", function () {
         <input type="text" class="question" c placeholder= "Write your question ">
         <br> 
         <div class="answer">
-          <input type="text"  placeholder= "your answer ">
+          <input class = "user-answer" type="text" placeholder= "your answer ">
           <input type="checkbox" />
         </div>
         <div class="answer">
@@ -166,4 +166,13 @@ function saveQuiz() {
   }
 }
 
-create.addEventListener("click", saveQuiz);
+// function validQuiz(){
+//   let isValid = true;
+
+// }
+ 
+create.addEventListener("click", function(e) {
+  e.preventDefault(); 
+  saveQuiz();
+  window.location.href = "../../home.html";
+});

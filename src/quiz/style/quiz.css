@@ -17,7 +17,6 @@
     margin: 0; 
 }
 
-
 #quiz-questions {
   min-width: 30%;
   display: flex;
@@ -43,7 +42,7 @@
   border: 2px solid #d7e2f0;
 }
 
-#section a button {
+.finish-button button {
   margin-top: 15px;
   cursor: pointer;
   background: #f7b5d9;
@@ -61,7 +60,7 @@
   box-shadow: 0 4px 12px rgba(240, 150, 190, 0.25);
 }
 
-#section a button:hover {
+.finish-button button:hover {
   background: #ff2c9cac;  
   box-shadow: 0 6px 14px rgba(230, 150, 190, 0.35);
   transform: translateY(-2px);

@@ -41,7 +41,7 @@ function updateTime() {
 const Interval = setInterval(() => {
   if(timeLeft <= 0) {
     clearInterval(Interval)
-    alert("Час вийшов!")
+    alert("Time is over!")
     finishQuiz()
     return
   }
@@ -71,12 +71,11 @@ const Interval = setInterval(() => {
     questionsEl.insertAdjacentHTML("beforeend", questionHTML);
   });
 
-
 document
   .querySelector("#section")
   .insertAdjacentHTML(
     "beforeend",
-    `<button onclick = "finishQuiz()">Finish</button>`
+    `<div class="finish-button"><button onclick = "finishQuiz()">Finish</button></div>`
   );
 function finishQuiz() {
   localStorage.removeItem(`quizEndTime_${currentQuiz.id}`)
