@@ -66,7 +66,7 @@ addQuestion.addEventListener("click", function () {
           <input type="checkbox" />
         </div>
         <div class="answer">
-          <input type="text"  placeholder= "your answer ">
+          <input type="text" placeholder= "your answer ">
           <input type="checkbox" />
         </div>
         <div>
@@ -127,7 +127,6 @@ function saveQuiz() {
   console.log(result.time)
 
   form.forEach((quizField, qIndex) => {
-
 
     const questionText = quizField.querySelector(".question").value.trim();
     result.question.push(questionText);

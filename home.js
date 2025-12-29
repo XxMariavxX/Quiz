@@ -17,10 +17,12 @@ function render(){
 
   if (quizzes.length === 0){
     section.insertAdjacentHTML("afterbegin", 
-      `
-      <div>You don't have any quizzes yet
-      <br> Let's create it !!!<div>
-      <a href = "/src/create/create.html"><button type = "button" class="create">Create it♥</button></a>
+      `<div class = "section">
+      <p class = "introduction" >You  don't  have  any  quizzes  yet 🥺</p>
+      <br>
+      <p class = "let-create" > Let's create it 😉!!!</p>
+      <a href = "/src/create/create.html"><button type = "button" class="create">Create it♥</button></a> 
+      </div>
       `
     )
     return 

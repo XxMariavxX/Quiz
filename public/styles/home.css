@@ -30,7 +30,7 @@
   cursor: pointer;
 
   transition: 0.25s;
-  margin-top: 18px;
+  margin-top: 20px;
 
   box-shadow: 0 4px 12px rgba(240, 150, 190, 0.25);
 }
@@ -39,4 +39,21 @@
   background: #ff2c9cac;      
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(42, 41, 43, 0.342);
+}
+
+.section{
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  height: auto;
+  flex-direction: column;
+}
+
+.introduction{
+  font-size: 1.4em;
+  font-weight: 400;
+}
+
+.let-create{
+  font-size: 1.6em;
 }
